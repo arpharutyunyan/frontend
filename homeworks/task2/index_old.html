@@ -9,8 +9,15 @@
             text-align: center;
         }
 
-        .nav_item_link {
-            margin-right: 10px;
+        li {
+            list-style: none;
+        }
+
+        #nav_item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         #logo img {
@@ -31,19 +38,19 @@
         <!-- start header -->
         <div id="header">
             <!-- start nav -->
-            <div id="header_nav">
-                <div id="logo" class="align_center">
+            <div id="header_nav" class="align_center">
+                <a href="#" id="logo">
                     <img src="https://www.azatutyun.am/Content/responsive/RFE/hy-AM/img/logo-compact.svg" alt="logo">
-                </div>
-                <div id="nav_item" class="align_center">
-                    <span class="nav_item_link">Հայաստան</span>
-                    <span class="nav_item_link">Քաղաքական</span>
-                    <span class="nav_item_link">Իրավունք</span>
-                    <span class="nav_item_link">Արցախ</span>
-                    <span class="nav_item_link">Աշխարհ</span>
-                    <span class="nav_item_link">Ուկրաինա</span>
-                    <span class="nav_item_link">Փոդքասթ</span>
-                </div>
+                </a>
+                <ul id="nav_item">
+                    <li class="nav_item_link">Հայաստան</li>
+                    <li class="nav_item_link">Քաղաքական</li>
+                    <li class="nav_item_link">Իրավունք</li>
+                    <li class="nav_item_link">Արցախ</li>
+                    <li class="nav_item_link">Աշխարհ</li>
+                    <li class="nav_item_link">Ուկրաինա</li>
+                    <li class="nav_item_link">Փոդքասթ</li>
+                </ul>
             </div>
             <!-- end nav -->
         </div>
@@ -248,7 +255,8 @@
                         <a href="#">Տնտեսություն</a>
                     </div>
                     <h4>
-                        Հայաստանյան բանկերը կասեցնում են Unistream համակարգի սպասարկումը </h4>
+                        Հայաստանյան բանկերը կասեցնում են Unistream համակարգի սպասարկումը
+                    </h4>
                 </div>
                 <div id="article_6_3">
                     <img src="https://gdb.rferl.org/0ba4fabf-8fc4-4464-bfd5-6474f24c68a7_w256_r1.png" alt=" ">
@@ -307,7 +315,7 @@
             <hr>
 
             <div>
-                <div>
+                <div id="inner_article_1">
                     <img src="https://gdb.rferl.org/01000000-0aff-0242-f3c6-08db8c567d60_w650_r1.png" alt=" ">
                     <div>
                         <a href="#">Մշակույթ</a>
@@ -318,7 +326,7 @@
                         առաջնախաղին
                     </h4>
                 </div>
-                <div>
+                <div id="inner_article_2">
                     <img src="https://gdb.rferl.org/01000000-0aff-0242-4d56-08db72fa1fa0_w650_r1.jpg" alt=" ">
                     <div>
                         <a href="#">Մշակույթ</a>
@@ -327,7 +335,7 @@
                         Երուսաղեմի նշանավոր արվեստի ձևը պատրաստվում է «վերադառնալ» Հայաստան
                     </h4>
                 </div>
-                <div>
+                <div id="inner_article_3">
                     <img src="https://gdb.rferl.org/2E34B4DC-A80A-48D6-86F0-1F786BEE543B_cx15_cy2_cw84_w650_r1.jpg"
                         alt=" ">
                     <div>
@@ -461,7 +469,7 @@
             <div>
                 <div id="nav_media">
                     <h5>Մուլտիմեդիա</h5>
-                    <ul style="list-style: none;">
+                    <ul>
                         <li>Ազատություն TV</li>
                         <li>Տեսանյութեր</li>
                         <li>Լրատվական</li>
@@ -474,7 +482,7 @@
                 </div>
                 <div id="nav_parts">
                     <h5>Բաժիններ</h5>
-                    <ul style="list-style: none;">
+                    <ul>
                         <li>Լուրեր</li>
                         <li>Քաղաքական</li>
                         <li>Իրավունք</li>
@@ -490,7 +498,7 @@
                 </div>
                 <div id="nav_follow">
                     <h5>ՀԵՏԵՎԵՔ ՄԵԶ</h5>
-                    <ul style="list-style: none;">
+                    <ul>
                         <li>Facebook</li>
                         <li>Twitter</li>
                         <li>Youtube</li>
@@ -507,7 +515,7 @@
             <div>
                 <div id="nav_about">
                     <h5>Մեր մասին</h5>
-                    <ul style="list-style: none;">
+                    <ul>
                         <li>«Ազատություն» ռ/կ</li>
                         <li>Կապը մեզ հետ</li>
                         <li>Բաժանորդագրվել էլ-փոստով</li>
@@ -516,7 +524,6 @@
                     </ul>
                 </div>
             </div>
-
 
             <div>
                 «Ազատ Եվրոպա/Ազատություն» ռադիոկայան &copy; 2023

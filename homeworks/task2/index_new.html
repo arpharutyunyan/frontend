@@ -9,8 +9,15 @@
             text-align: center;
         }
 
-        .nav_item_link {
-            margin-right: 10px;
+        li {
+            list-style: none;
+        }
+
+        #nav_item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         #logo img {
@@ -31,19 +38,19 @@
         <!-- start header -->
         <header>
             <!-- start nav -->
-            <nav>
-                <div id="logo" class="align_center">
+            <nav class="align_center">
+                <a href="#" id="logo">
                     <img src="https://www.azatutyun.am/Content/responsive/RFE/hy-AM/img/logo-compact.svg" alt="logo">
-                </div>
-                <div id="nav_item" class="align_center">
-                    <span class="nav_item_link">Հայաստան</span>
-                    <span class="nav_item_link">Քաղաքական</span>
-                    <span class="nav_item_link">Իրավունք</span>
-                    <span class="nav_item_link">Արցախ</span>
-                    <span class="nav_item_link">Աշխարհ</span>
-                    <span class="nav_item_link">Ուկրաինա</span>
-                    <span class="nav_item_link">Փոդքասթ</span>
-                </div>
+                </a>
+                <ul id="nav_item">
+                    <li class="nav_item_link">Հայաստան</li>
+                    <li class="nav_item_link">Քաղաքական</li>
+                    <li class="nav_item_link">Իրավունք</li>
+                    <li class="nav_item_link">Արցախ</li>
+                    <li class="nav_item_link">Աշխարհ</li>
+                    <li class="nav_item_link">Ուկրաինա</li>
+                    <li class="nav_item_link">Փոդքասթ</li>
+                </ul>
             </nav>
             <!-- end nav -->
         </header>
@@ -214,7 +221,6 @@
                     <article>
                         <img src="https://gdb.rferl.org/6278F10B-D83C-4BEA-B8BC-00AD0A79B209_cx0_cy20_cw100_w408_r1_s.jpg"
                             alt=" ">
-
                         <h4>
                             Գործադիր պրոդյուսեր, Երևան
                         </h4>
@@ -246,7 +252,8 @@
                         <a href="#">Տնտեսություն</a>
                     </div>
                     <h4>
-                        Հայաստանյան բանկերը կասեցնում են Unistream համակարգի սպասարկումը </h4>
+                        Հայաստանյան բանկերը կասեցնում են Unistream համակարգի սպասարկումը
+                    </h4>
                 </article>
                 <article>
                     <img src="https://gdb.rferl.org/0ba4fabf-8fc4-4464-bfd5-6474f24c68a7_w256_r1.png" alt=" ">
@@ -449,7 +456,7 @@
             <div>
                 <nav>
                     <h5>Մուլտիմեդիա</h5>
-                    <ul style="list-style: none;">
+                    <ul>
                         <li>Ազատություն TV</li>
                         <li>Տեսանյութեր</li>
                         <li>Լրատվական</li>
@@ -462,7 +469,7 @@
                 </nav>
                 <nav>
                     <h5>Բաժիններ</h5>
-                    <ul style="list-style: none;">
+                    <ul>
                         <li>Լուրեր</li>
                         <li>Քաղաքական</li>
                         <li>Իրավունք</li>
@@ -478,7 +485,7 @@
                 </nav>
                 <nav>
                     <h5>ՀԵՏԵՎԵՔ ՄԵԶ</h5>
-                    <ul style="list-style: none;">
+                    <ul>
                         <li>Facebook</li>
                         <li>Twitter</li>
                         <li>Youtube</li>
@@ -495,7 +502,7 @@
             <div>
                 <nav>
                     <h5>Մեր մասին</h5>
-                    <ul style="list-style: none;">
+                    <ul>
                         <li>«Ազատություն» ռ/կ</li>
                         <li>Կապը մեզ հետ</li>
                         <li>Բաժանորդագրվել էլ-փոստով</li>
