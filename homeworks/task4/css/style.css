@@ -184,6 +184,7 @@ address {
 }
 
 .about__me {
+    height: 570px;
     padding: 140px 140px 140px 85px;
 }
 
@@ -272,7 +273,9 @@ address {
 
 .contact__form {
     width: calc(670 / 1170 * 100% - 4px);
+    height: 645px;
     padding: 100px 0;
+    overflow: hidden;
 }
 
 .row {
