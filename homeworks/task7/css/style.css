@@ -636,3 +636,139 @@ textarea {
     background-size: cover;
     padding: 70px 0;
 }
+
+.footer__top {
+    margin-bottom: 65px;
+}
+
+.footer__logo,
+.our__studio,
+.in__touch {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.footer__logo {
+    width: calc(300 / 960 * 100%);
+    margin-right: 20px;
+}
+
+.footer__desc {
+    margin-top: 23px;
+    line-height: 26px;
+    font-weight: 300;
+}
+
+.our__studio {
+    display: inline-block;
+    width: calc(310 / 960 * 100%);
+    margin-right: 20px;
+}
+
+.our__studio-title {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 26px;
+    font-weight: 900;
+    margin-bottom: 35px;
+}
+
+.address {
+    line-height: 26px;
+    font-weight: 300;
+    padding-left: 30px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.location .icon {
+    display: inline-block;
+    height: 78px;
+    overflow: hidden;
+}
+
+.tel .icon {
+    display: inline-block;
+}
+
+.tel__number {
+    line-height: 26px;
+    font-weight: 300;
+    padding-left: 30px;
+}
+
+.in__touch {
+    width: calc(290 / 960 * 100%);
+}
+
+.in__touch-title {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 26px;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.subscribe__form {
+    width: calc(210 / 290 * 100% - 4px);
+    opacity: 0.749;
+    letter-spacing: 1px;
+    font-weight: 300;
+    border: 1px solid #ffffff;
+    padding: 15px 0;
+    height: 45px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.paper {
+    display: inline-block;
+    opacity: 0.502;
+    width: 66px;
+    height: 45px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.social__media {
+    margin-top: 25px;
+}
+
+.social__link {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    margin-right: 6px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.social__link:last-child {
+    margin-right: 0;
+}
+
+.footer__nav,
+.copyright,
+.footer__nav-link {
+    display: inline-block;
+}
+
+.footer__bottom {
+    line-height: 26px;
+    font-weight: 400;
+}
+
+.footer__nav {
+    width: calc(720 / 960 * 100%);
+}
+
+.footer__nav-link {
+    margin-right: 30px;
+}
