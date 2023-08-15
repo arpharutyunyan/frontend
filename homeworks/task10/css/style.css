@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    color: #fff;
+}
+
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 40%;
+    margin: 50px auto;
+}
+
+.form__title {
+    text-decoration: underline;
+    color: #6a5acd;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.form__body {
+    width: 100%;
+    background-color: #6a5acd;
+    border: 1px solid #2f1d9e;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+
+.lable {
+    display: inline-block;
+    width: 120px;
+    margin-right: 22px;
+    margin-bottom: 17px;
+    text-transform: uppercase;
+}
+
+.inner__lable {
+    text-transform: capitalize;
+}
+
+input {
+    width: 115px;
+    height: 20px;
+    padding-left: 3px;
+}
+
+.check {
+    width: unset;
+    height: unset;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+textarea {
+    width: 200px;
+    height: 50px;
+    caret-color: #6a5acd;
+    margin-bottom: 17px;
+}
+
+.line_start {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.line_start.address {
+    height: 50px;
+}
+
+.line_start.hobby {
+    height: 57px;
+    margin-bottom: 0;
+}
+
+.line_start.qualification {
+    height: 126px;
+    margin-bottom: 0;
+}
+
+.hobbies__block {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.hobbies__block input:last-of-type {
+    margin: 10px 0;
+}
+
+.buttons {
+    width: 130px;
+    margin: 0 auto;
+}
+
+button {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.qualification,
+.number,
+.exam,
+.input__title {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.number {
+    width: 40px;
+}
+
+.exam {
+    width: 70px;
+}
+
+.input__title {
+    width: 115px;
+    text-align: center;
+}
+
+.row:last-child {
+    margin-left: 118px;
+}
