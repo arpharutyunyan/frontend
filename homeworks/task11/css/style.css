@@ -68,6 +68,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     color: #282828;
     font-size: 17px;
