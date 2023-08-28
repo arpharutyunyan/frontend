@@ -204,6 +204,7 @@ ul {
     padding: 30px 40px 40px 20px;
     transition: all 0.3s;
     top: 50px;
+    left: -100px;
 }
 
 .sub__category {
@@ -436,6 +437,16 @@ ul {
     padding-top: 15px;
     transition: all 0.5s;
     z-index: 2;
+}
+
+.products__list__left .product__item:last-child .layer,
+.products__list__right .product__item:first-child .layer {
+    height: 870px;
+}
+
+.products__list__left .product__item:last-child .layer__info__icon,
+.products__list__right .product__item:first-child .layer__info__icon {
+    margin-bottom: 370px;
 }
 
 .layer img {
