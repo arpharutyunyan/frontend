@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Hind';
+    src: url('Hind-Light.eot');
+    src: url('Hind-Light.eot?#iefix') format('embedded-opentype'),
+        url('Hind-Light.woff2') format('woff2'),
+        url('Hind-Light.woff') format('woff'),
+        url('Hind-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Light.eot');
+    src: url('OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('OpenSans-Light.woff2') format('woff2'),
+        url('OpenSans-Light.woff') format('woff'),
+        url('OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hind';
+    src: url('Hind-Medium.eot');
+    src: url('Hind-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Hind-Medium.woff2') format('woff2'),
+        url('Hind-Medium.woff') format('woff'),
+        url('Hind-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hind';
+    src: url('Hind-Regular.eot');
+    src: url('Hind-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Hind-Regular.woff2') format('woff2'),
+        url('Hind-Regular.woff') format('woff'),
+        url('Hind-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hind';
+    src: url('Hind-Bold.eot');
+    src: url('Hind-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Hind-Bold.woff2') format('woff2'),
+        url('Hind-Bold.woff') format('woff'),
+        url('Hind-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Bold.eot');
+    src: url('Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Montserrat-Bold.woff2') format('woff2'),
+        url('Montserrat-Bold.woff') format('woff'),
+        url('Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
