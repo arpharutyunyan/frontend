@@ -157,13 +157,23 @@ ul {
     width: 100%;
     max-width: 1530px;
     height: 580px;
-    background-image: url("../images/slide.png");
-    background-size: contain;
+    /*background-image: url("../images/slide.png");*/
+    /*background-size: contain;*/
     position: absolute;
     left: 0;
     right: 0;
     top: 55px;
     margin: auto;
+}
+
+.banner__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 
 .banner__img__block .left__side {
