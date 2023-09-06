@@ -315,34 +315,29 @@ ul {
 }
 
 .about {
-    padding: 125px 0 105px;
+    padding: 125px 0 150px;
     background-color: #f3f3f3;
 }
 
 .about__right__side {
-    width: calc(529 / 1170 * 100%);
-    height: 452px;
-    filter: drop-shadow(0 0 46px rgba(0, 0, 0, 0.06));
-    background-color: #ffffff;
+    width: 529px;
+    height: 335px;
     padding: 60px 10px 75px 60px;
-    /*perspective: 100px;*/
-    /*perspective-origin: left;*/
+    perspective: 550px;
     position: relative;
-
 }
 
-/*.sight__side__content {*/
-/*    width: calc(529 / 1170 * 100%);*/
-/*    height: 452px;*/
-/*    filter: drop-shadow(0 0 46px rgba(0, 0, 0, 0.06));*/
-/*    background-color: #ffffff;*/
-/*    padding: 60px 10px 75px 60px;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    !*transform-style: preserve-3d;*!*/
-/*    !*transform: rotateY(45deg);*!*/
-/*}*/
+.about__right__bg__layer {
+    width: 100%;
+    height: 370px;
+    filter: drop-shadow(0 0 46px rgba(0, 0, 0, 0.06));
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 1s;
+    z-index: -1
+}
 
 .about .section__title {
     margin-bottom: 35px;
@@ -368,20 +363,53 @@ ul {
 
 .about__left__side {
     width: 529px;
-    height: 452px;
+    height: 335px;
+    position: relative;
+    perspective: 550px;
+}
+
+.about__bg__layer {
     background-image: url(../images/bg/about_bg.png);
     background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    bottom: -60px;
+    left: -17px;
+    position: absolute;
+    transition: 1s;
+}
+
+.inner__block {
+    /*transform: rotateY(20deg) ;*/
+
+    transition: 1s;
     position: relative;
 }
 
+.about__left__side:hover .about__bg__layer {
+    transform: rotateY(20deg);
+}
+
+.about__right__side:hover .about__right__bg__layer {
+    right: 20px;
+    transform: rotateY(-20deg);
+
+}
+
+.about__left__side:hover .inner__block {
+    transform: rotateY(20deg);
+}
+
+.about__left__side:hover .circle {
+    transform: rotateY(-540deg);
+
+}
 
 .about__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    perspective: 100px;
-    perspective-origin: left;
 }
 
 .circle {
@@ -393,6 +421,7 @@ ul {
     background-color: #ed1c24;
     top: -25px;
     left: -25px;
+    transition: 0.4s;
 }
 
 .circle:nth-child(2) {
@@ -864,6 +893,25 @@ ul {
     width: calc(520 / 1170 * 100%);
     float: right;
     border-bottom: 1px solid #FFFFFF;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.subscribe::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgba(237, 28, 36, 0.79);
+    transform: translate(0, 100%);
+    transition: all 1s ease-in;
+
+}
+
+.subscribe:focus-within::after {
+    width: 100%;
 }
 
 .subscribe input {
