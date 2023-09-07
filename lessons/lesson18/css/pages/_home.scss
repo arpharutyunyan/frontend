@@ -1,0 +1,15 @@
+.info {
+  @include theme($theme: black);
+}
+.alert {
+  @include theme($theme: DarkRed);
+}
+.success {
+  @include theme($padding:20, $theme: DarkGreen );
+  &:nth-child(2){
+    background: #000;
+    height: 500px;
+  }
+}
+
+@include corner-icon("mail", top, left);
