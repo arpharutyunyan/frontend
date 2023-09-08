@@ -5,7 +5,7 @@
 }
 
 %section__title {
-  @include text-style($font-size: 35, $text-transform: uppercase, $font-weight:bold, $color: '#090808');
+  @include text-style($font-size: 35, $text-transform: uppercase, $font-weight:bold, $color: #090808);
 }
 
 %section__desc {
