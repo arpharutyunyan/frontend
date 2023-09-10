@@ -18,6 +18,7 @@
     right: 0;
 
     .icon {
+      display: none;
       color: $white;
       font-size: 20px;
     }
@@ -38,7 +39,7 @@
   }
 
   &__title {
-    @include text-style($font-size: 147, $text-transform:uppercase);
+    @include text-style($font-size: 147, $text-transform: uppercase);
     line-height: 126px;
     margin-bottom: 50px;
   }
@@ -52,7 +53,7 @@
 
   &__btn {
     @include flex(center, center);
-    @include text-style($font-size: 17, $text-transform:uppercase, $font-weight:400, $font-family:'Poppins', $color:#090808);
+    @include text-style($font-size: 17, $text-transform: uppercase, $font-weight: 400, $font-family: 'Poppins', $color: #090808);
     width: 180px;
     height: 51px;
     border-radius: 7px;
@@ -126,5 +127,14 @@
     background-color: #ab9d92;
     bottom: 50px;
     left: -58px;
+  }
+
+  .nav {
+    transition: all 0.4s;
+
+    &__block {
+      display: flex;
+      gap: 30px;
+    }
   }
 }

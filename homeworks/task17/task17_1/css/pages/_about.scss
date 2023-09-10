@@ -3,7 +3,7 @@
   background-color: #f3f3f3;
 
   &__right__side {
-    width: 529px;
+    width: calc(100% / 2 - 20px);
     height: 335px;
     padding: 60px 10px 75px 60px;
     perspective: 550px;
@@ -50,7 +50,7 @@
   }
 
   &__left__side {
-    width: 529px;
+    width: calc(100% / 2 - 20px);
     height: 335px;
     position: relative;
     perspective: 550px;
@@ -94,7 +94,7 @@
     display: block;
     width: 50px;
     height: 50px;
-    border-radius: 25px;
+    border-radius: 50%;
     background-color: #ed1c24;
     top: -25px;
     left: -25px;
