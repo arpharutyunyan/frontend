@@ -1,0 +1,51 @@
+.services {
+  text-align: center;
+  margin-top: 65px;
+
+  .section__title {
+    @extend %section__title;
+    margin-bottom: 20px;
+  }
+
+  .section__desc {
+    @extend %section__desc;
+    margin-bottom: 45px;
+  }
+
+  &__item {
+    height: 380px;
+    background-color: $black;
+  }
+
+  &__article {
+    width: calc(290 / 1170 * 100%);
+    margin: 70px 0 90px;
+    text-align: left;
+
+    i {
+      color: $white;
+      font-size: 70px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .article__title {
+    @include text-style($font-size: 25, $font-weight: bold, $color: #fffdfd);
+    margin-bottom: 25px;
+  }
+
+  .article__desc {
+    @include text-style($font-weight: normal, $color: #fffdfd);
+  }
+
+  .btn {
+    @include btn-style($width: 235, $height: 70);
+    @include flex;
+    margin: 45px auto 180px;
+    @include text-style( $font-weight: bold, $color: $white);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

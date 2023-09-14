@@ -1,0 +1,21 @@
+@mixin flex($align_items: center, $justify_content: center) {
+  display: flex;
+  align-items: $align_items;
+  justify-content: $justify_content;
+}
+
+@mixin text-style($font-size: 17, $text-transform:none, $font-weight:400, $font-family:'Helvetica', $color:$black) {
+  font-size: $font-size+px;
+  text-transform: $text-transform;
+  color: $color;
+  font-weight: $font-weight;
+  font-family: $font-family, sans-serif;
+}
+
+@mixin btn-style($width, $height, $bgc:$red, $text_color:$white) {
+  width: $width+px;
+  height: $height+px;
+  background-color: $bgc;
+  color: $text_color;
+  transition: all 0.4s;
+}

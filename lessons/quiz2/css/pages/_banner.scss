@@ -1,0 +1,101 @@
+.banner {
+
+  position: relative;
+  background-image: url("#{$path}images/slide_bg.png");
+  background-position: center;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 1035px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.902;
+    background-image: linear-gradient(6deg, #000000 0%, #292929 47%, #050303 99%, #050303 100%);
+  }
+
+  .owl-Carousel {
+    width: 100%;
+    height: 1035px;
+  }
+
+  .item,
+  {
+    width: 100%;
+    position: relative;
+  }
+
+  //.owl-item {
+  //  width: 100% !important;
+  //  //height: 1035px;
+  //}
+
+  .owl-Carousel .owl-nav button.owl-next,
+  .owl-Carousel .owl-nav button.owl-prev {
+    border: 0;
+    width: 70px;
+    height: 140px;
+    background-color: $white;
+    border-radius: 69px;
+    color: $black;
+    position: absolute;
+    z-index: 2;
+    top: 45%;
+    font-size: 20px;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  .owl-Carousel .owl-nav button.owl-next {
+    right: -30px;
+  }
+
+  .owl-Carousel .owl-nav button.owl-prev {
+    left: -30px;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 290px;
+    bottom: 300px;
+    margin:  auto;
+    max-width: 1170px;
+    z-index: 2;
+  }
+
+  &__header {
+    @include text-style($font-size: 80, $font-weight: bold, $color: $white);
+    margin-bottom: 70px;
+  }
+
+  &__desc {
+    @include text-style($font-size: 18, $font-weight: bold, $color: $white);
+    margin-bottom: 100px;
+  }
+
+  .btn {
+    @include btn-style($width: 235, $height: 70);
+    @include flex;
+    @include text-style( $font-weight: bold, $color: $white);
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:nth-child(2){
+      @include btn-style($width: 235, $height: 70, $bgc:$white);
+      @include text-style($color: $black);
+    }
+  }
+
+  .row{
+    justify-content: flex-start;
+    gap: 25px;
+  }
+}
