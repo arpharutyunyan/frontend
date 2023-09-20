@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner1{
+    width: 100%;
+    height: 600px;
+    background-color: #ccc;
+    background-image: url(../img/img_1.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner2{
+    width: 100%;
+    height: 600px;
+    background-color: #ccc;
+    background-image: url(../img/img_3.png);
+}
+
+.banner {
+    width: 100%;
+    height: 600px;
+    background-color: #ccc;
+    background-image: url(../img/img_3.png), url("../img/img_4.png"), url("../img/img_1.png");
+    background-repeat: repeat-x, repeat-x;
+    background-position: 0 0, 0 200px, 0 400px;
+    background-size: 200px, 33% 33%, 200px;
+    transition: all 0.4s;
+}
+.banner:hover{
+    background-position: 0;
+    background-size: 0, 0, cover;
+}

@@ -1,0 +1,140 @@
+.header {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+
+  .slide {
+    display: flex;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__top {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+
+    .icon {
+      display: none;
+      color: $white;
+      font-size: 20px;
+    }
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .logo__img {
+    @extend %img-size;
+  }
+
+  &__left__col {
+    background-color: $red;
+    width: 680px;
+    height: 900px;
+  }
+
+  &__title {
+    @include text-style($font-size: 147, $text-transform: uppercase);
+    line-height: 126px;
+    margin-bottom: 50px;
+  }
+
+  &__desc {
+    width: 438px;
+    line-height: 31px;
+    @include text-style();
+    margin-bottom: 50px;
+  }
+
+  &__btn {
+    @include flex(center, center);
+    @include text-style($font-size: 17, $text-transform: uppercase, $font-weight: 400, $font-family: 'Poppins', $color: #090808);
+    width: 180px;
+    height: 51px;
+    border-radius: 7px;
+    background-color: #fefefe;
+    line-height: 31px;
+    transition: all 0.4s;
+  }
+
+  &__left__block {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 260px;
+  }
+
+  &__right__col {
+    position: relative;
+    width: calc(100% - 680px);
+    height: 900px;
+
+    .item {
+      width: 100%;
+      height: 900px;
+    }
+  }
+
+  .slide__img {
+    @extend %img-size;
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+  }
+
+  .numbers {
+    position: relative;
+    color: $white;
+    font-size: 13px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      color: $white;
+      width: 43px;
+      height: 1px;
+      background-color: #fefefe;
+      top: 50%;
+      left: -13px;
+    }
+  }
+
+  .owl-carousel .owl-nav button.owl-next,
+  .owl-carousel .owl-nav button.owl-prev {
+    width: 60px;
+    height: 55px;
+    color: $white;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .owl-carousel .owl-nav button.owl-next {
+    background-color: $red;
+    left: 0;
+    bottom: 105px;
+  }
+
+  .owl-carousel .owl-nav button.owl-prev {
+    background-color: #ab9d92;
+    bottom: 50px;
+    left: -58px;
+  }
+
+  .nav {
+    transition: all 0.4s;
+
+    &__block {
+      display: flex;
+      gap: 30px;
+    }
+  }
+}

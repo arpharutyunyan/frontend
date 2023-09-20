@@ -1,0 +1,49 @@
+.services {
+  padding: 85px 0 120px;
+  text-align: center;
+
+  .section__title{
+    @extend %section__title;
+    margin-bottom: 15px;
+  }
+
+  .section__desc {
+    @extend %section__desc;
+    margin-bottom: 50px;
+  }
+
+  &__articles {
+    width: calc(210 / 1170 * 100%);
+  }
+
+  &__logo {
+    width: 100px;
+    object-fit: cover;
+    margin-bottom: 25px;
+  }
+
+  .article__title {
+    @include text-style($font-size: 20, $text-transform: uppercase, $font-weight: 400, $color: #090808);
+    margin-bottom: 20px;
+  }
+
+  .article__desc {
+    font-size: 17px;
+    color: #3f3e3e;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 25px;
+  }
+
+  &__btn {
+    font-size: 12px;
+    color: $white;
+    width: 96px;
+    height: 31px;
+    border-radius: 2px;
+    background-color: $red;
+    @include flex();
+    margin: 0 auto;
+    transition: all 0.4s;
+  }
+}

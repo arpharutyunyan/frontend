@@ -1,0 +1,19 @@
+@media only screen and (max-width: 1440px) {
+  @import "mxw-1440";
+}
+
+@media only screen and (max-width: 1200px) {
+  @import "mxw-1200";
+}
+
+@media only screen and (max-width: 992px) {
+  @import "mxw-992";
+}
+
+@media only screen and (max-width: 768px) {
+  @import "mxw-768";
+}
+
+@media only screen and (max-width: 576px) {
+  @import "mxw-576";
+}

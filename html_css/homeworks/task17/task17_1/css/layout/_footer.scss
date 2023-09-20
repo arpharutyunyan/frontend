@@ -1,0 +1,106 @@
+.footer {
+  &__top {
+    background-color: #1c1b2d;
+    padding: 65px 0 55px;
+
+    .row {
+      align-items: flex-start;
+      color: #fefefe;
+    }
+  }
+
+  &__bottom {
+    padding: 25px 0;
+  }
+
+  &__item {
+    &:first-child &__title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .footer__nav__item:first-child,
+    .footer__title {
+      font-size: 30px;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    font-size: 17px;
+    width: 195px;
+  }
+
+  .subscribe {
+    @include flex(center, space-between);
+    width: calc(520 / 1170 * 100%);
+    float: right;
+    border-bottom: 1px solid #FFFFFF;
+    padding-bottom: 10px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: rgba(237, 28, 36, 0.79);
+      transform: translate(0, 100%);
+      transition: all 1s ease-in;
+    }
+
+    &:focus-within::after {
+      width: 100%;
+    }
+
+    input {
+      background-color: transparent;
+      border: 0;
+      outline: none;
+      color: #FFFFFF;
+      height: 20px;
+
+      &::placeholder {
+        color: #4d4c4c;
+      }
+    }
+
+    button {
+      @include text-style($text-transform: uppercase, $font-weight: 700);
+      background-color: transparent;
+      border: 0;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+
+  }
+
+  .social__connects {
+    @include flex();
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .social__link {
+    @include flex();
+    width: 30px;
+    height: 30px;
+    color: $white;
+    border-radius: 50%;
+    background-color: #1b1b2d;
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 17px;
+    color: #040000;
+  }
+}

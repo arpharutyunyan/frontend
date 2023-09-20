@@ -1,0 +1,37 @@
+.header {
+  background: #cccccc;
+  padding: 10px 0;
+  margin-bottom: 50px;
+
+  .row {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu__label,
+.menu__input {
+  display: none;
+}
+
+.logo__img {
+  height: 50px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.nav {
+  &__block {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__list {
+    margin-left: 30px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #000000;
+  }
+}

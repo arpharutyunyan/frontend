@@ -1,0 +1,13 @@
+@mixin flex($align_items: center, $justify_content: center) {
+  display: flex;
+  align-items: $align_items;
+  justify-content: $justify_content;
+}
+
+@mixin text-style($font-size: 17, $text-transform:none, $font-weight:400, $font-family:'Poppins', $color:$white) {
+  font-size: $font-size+px;
+  text-transform: $text-transform;
+  color: $color;
+  font-weight: $font-weight;
+  font-family: $font-family, sans-serif;
+}

@@ -1,0 +1,46 @@
+.footer {
+  .row:nth-child(3) {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__item {
+    margin-top: 0;
+  }
+
+  &__item:first-child {
+    margin-top: 30px;
+  }
+}
+
+.banner {
+
+  &__header{
+    @include text-style($font-size: 30, $font-weight: bold, $color: $white);
+  }
+  .btn {
+    @include btn-style($width: 135, $height: 50);
+
+    &:nth-child(2){
+      @include btn-style($width: 135, $height: 50, $bgc:$white);
+      @include text-style($color: $black);
+    }
+  }
+  &__content {
+    max-width: 200px;
+  }
+}
+
+.subscribe {
+  .btn {
+    @include btn-style($width: 185, $height: 50);
+  }
+}
+
+.header {
+  .nav {
+    &__list {
+      width: 70%;
+    }
+  }
+}
