@@ -1,51 +1,121 @@
-// ----------------------- 1 -----------------------
-var userInput = 20;
-var result;
-console.log('result before init: ', result);
+// 1.1 Գրել ցիկլ որը կոնսոլում տպում է 17-ից 42 թվերը (42-ը ներառյալ):
 
-result = userInput + 5;
-console.log(`${userInput} + 5 = ${result}`);
+// var num = 17;
+// while(num <= 42){
+//     console.log(num);
+//     num++;
+// }
 
-result = userInput - 10.2;
-console.log(`${userInput} - 10.2 = ${result}`);
+// 1.2 Գրել ծրագիր, որը հաշվում է 2 թվի 12 աստիճանը:
 
-result = userInput / 3;
-console.log(`${userInput} / 3 = ${result}`);
+// var start = 2; 
+// var result = 2; // 2*1 whats why start from 2 and skip one iteration
+// while(start <= 12){
+//     result *= 2
+//     start++;
+// }
+// console.log(result);
 
-result = userInput * 100;
-console.log(`${userInput} * 100 = ${result}`);
+// // or 
 
-result = userInput % 3;
-console.log(`${userInput} % 3 = ${result}`);
+// var start = 1; 
+// var result = 1; // only for initialize, give 1 because multiply value not changed during first iteration (1*2)
+// while(start <= 12){
+//     result *= 2
+//     start++;
+// }
+// console.log(result);
 
-result = userInput ** 3;
-console.log(`${userInput} ** 3 = ${result}`);
+// 1.3 Պատկերել կոնսոլում աստղանիշներներով ուղղանկյուն եռանկյուն:
 
+// var i = 0;
+// while(i < 5){
+//     var j = 0;
+//     let star = '';
+//     while(j < i+1){ // or j <= i
+//         star += '*';
+//         j++;
+//     }
+//     console.log(star);
+//     i++;
+// }
 
-// ----------------------- 2 -----------------------
-var country = 'United States';
-var continent = 'North America';
-var population = 331000000;
-var isIsland = false;
+// 2.1 Գրել ցիկլ որը կոնսոլում տպում է 0-ից 100 թվերի գումարը:
 
-console.log('Country: ' + country);
-console.log('Continent: ' + continent);
-console.log('Population: ' + population);
-console.log('isIsland: ' + isIsland);
+// var sum = 0;
+// for(var i=0; i<100; i++){
+//     sum += i;
+// }
+// console.log(sum);
 
+// 2.2 Գրել ցիկլ որը կոնսոլում տպում է 0-ից 100 թվերը, որոնք զույգ են:
 
-// ----------------------- 3 -----------------------
-var height = 1.69;
-var mass = 78;
-var bmi = mass / height ** 2;
-console.log('Height: ' + height + ' meters');
-console.log('Mass: ' + mass + ' kilograms');
-console.log('BMI: ' + bmi);
+// for(var i=0; i<100; i++){
+//     if(!(i%2)){ // i % 2 = 0, !0 == true
+//         console.log(i + ' is even');
+//     }
+// }
 
-height = 1.95;
-mass = 92;
-bmi = mass / height ** 2;
-console.log('Height: ' + height + ' meters');
-console.log('Mass: ' + mass + ' kilograms');
-console.log('BMI: ' + bmi);
+// 2.3 Գրել ցիկլ որը կոնսոլում տպում է 25-ից 80 թվերը, որոնք կենտ են:
 
+// for(var i=25; i<80; i++){
+//     if(i%2){ 
+//         console.log(i + ' is odd');
+//     }
+// }
+
+// 2.4 Գրել ցիկլ որը կոնսոլում տպում է 0-ից 100 միջակայքում ընկած պարզ թվերը:
+
+// for(var i=2; i<100; i++){
+//     var isPrime = true;
+//     for(var j=2; j<i; j++){
+//         if(!(i%j)){ 
+//             isPrime = false;
+//             break;
+//         }
+//     }
+//     if(isPrime){
+//         console.log(i + ' is prime number');
+//     }
+// }
+
+// or
+
+// for(var i=2; i<100; i++){
+//     var isPrime = true;
+//     for(var j=2; j<=Math.sqrt(i); j++){
+//         if(!(i%j)){ 
+//             isPrime = false;
+//             break;
+//         }
+//     }
+//     if(isPrime){
+//         console.log(i + ' is prime number');
+//     }
+// }
+
+// 3. Ցիկլի միջոցով ստանալ Ֆիբոնաչիի շարքի առաջին 10 թվերը(0, 1, 1, 2, 3, 5, 8, 13, 21, 34.):
+
+var prePrevious = 0;
+var previous = 1;
+var result = '(';
+for(var i = 0; i<8; i++){
+
+    result += prePrevious;
+    console.log('result', result);
+    var currentNum = previous + prePrevious;
+
+    prePrevious = previous;
+    previous = currentNum;
+
+    console.log('prePrevious', prePrevious);
+    console.log('previous', previous);
+    console.log('i', i);
+
+    if (i === 7) {
+        result += '.';
+    } else {
+        result += ', ';
+    }
+}
+console.log(result);
