@@ -83,7 +83,7 @@ for(var i=2; i<100; i++){
 
 var prePrevious = 0;
 var previous = 1;
-var result = `( ${prePrevious}, ${previous}, `;
+var result = `(${prePrevious}, ${previous}, `;
 for(var i = 0; i<8; i++){ // first two items already exist
 
     var currentNum = previous + prePrevious;
