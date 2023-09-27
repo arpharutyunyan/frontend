@@ -11,7 +11,7 @@ while(num <= 42){
 var start = 2;
 var result = 2; // 2*1 what's why start from 2 and skip one iteration
 while(start <= 12){
-    result *= 2
+    result *= 2;
     start++;
 }
 console.log(result);
@@ -21,7 +21,7 @@ console.log(result);
 var start = 1;
 var result = 1; // only for initialize, give 1 because multiply value not changed during first iteration (1*2)
 while(start <= 12){
-    result *= 2
+    result *= 2;
     start++;
 }
 console.log(result);
@@ -29,13 +29,9 @@ console.log(result);
 // 1.3 Պատկերել կոնսոլում աստղանիշներներով ուղղանկյուն եռանկյուն:
 
 var i = 0;
+var star = '';
 while(i < 5){
-    var j = 0;
-    let star = '';
-    while(j < i+1){ // or j <= i
-        star += '*';
-        j++;
-    }
+    star += '*';
     console.log(star);
     i++;
 }
@@ -83,8 +79,9 @@ for(var i=2; i<100; i++){
 
 var prePrevious = 0;
 var previous = 1;
+var step = 8;
 var result = `(${prePrevious}, ${previous}, `;
-for(var i = 0; i<8; i++){ // first two items already exist
+for(var i = 0; i<step; i++){ // first two items already exist
 
     var currentNum = previous + prePrevious;
 
@@ -92,7 +89,7 @@ for(var i = 0; i<8; i++){ // first two items already exist
     previous = currentNum;
     result += currentNum;
 
-    if (i === 7) { // check last element
+    if (i === step - 1) { // check last element
         result += '.)';
     } else {
         result += ', ';
