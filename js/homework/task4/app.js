@@ -60,19 +60,19 @@ if (!isNaN(firstNumber)) {
                 if (secondNumber !== 0) {
                     result = firstNumber / secondNumber;
                 } else {
-                    result = 'Division by zero is not allowed.';
+                    result = 'Division by zero is not allowed';
                 }
                 break;
             default:
-                result = 'Invalid operator.';
+                result = 'Invalid operator';
         }
 
         console.log(result);
 
     } else {
-        console.log('Invalid input for the second number.');
+        console.log('Invalid input for the second number');
     }
 
 } else {
-    console.log('Invalid input for the first number.');
+    console.log('Invalid input for the first number');
 }
