@@ -1,7 +1,7 @@
 // 1.1 Գրել ցիկլ որը կոնսոլում տպում է 17-ից 42 թվերը (42-ը ներառյալ):
 
 var num = 17;
-while(num <= 42){
+while (num <= 42) {
     console.log(num);
     num++;
 }
@@ -10,7 +10,7 @@ while(num <= 42){
 
 var start = 2;
 var result = 2; // 2*1 what's why start from 2 and skip one iteration
-while(start <= 12){
+while (start <= 12) {
     result *= 2;
     start++;
 }
@@ -20,7 +20,7 @@ console.log(result);
 
 var start = 1;
 var result = 1; // only for initialize, give 1 because multiply value not changed during first iteration (1*2)
-while(start <= 12){
+while (start <= 12) {
     result *= 2;
     start++;
 }
@@ -30,7 +30,7 @@ console.log(result);
 
 var i = 0;
 var star = '';
-while(i < 5){
+while (i < 5) {
     star += '*';
     console.log(star);
     i++;
@@ -39,38 +39,38 @@ while(i < 5){
 // 2.1 Գրել ցիկլ որը կոնսոլում տպում է 0-ից 100 թվերի գումարը:
 
 var sum = 0;
-for(var i=0; i<100; i++){
+for (var i = 0; i < 100; i++) {
     sum += i;
 }
 console.log(sum);
 
 // 2.2 Գրել ցիկլ որը կոնսոլում տպում է 0-ից 100 թվերը, որոնք զույգ են:
 
-for(var i=0; i<100; i++){
-    if(!(i%2)){ // i % 2 = 0, !0 == true
+for (var i = 0; i < 100; i++) {
+    if (!(i % 2)) { // i % 2 = 0, !0 == true
         console.log(i + ' is even');
     }
 }
 
 // 2.3 Գրել ցիկլ որը կոնսոլում տպում է 25-ից 80 թվերը, որոնք կենտ են:
 
-for(var i=25; i<80; i++){
-    if(i%2){
+for (var i = 25; i < 80; i++) {
+    if (i % 2) {
         console.log(i + ' is odd');
     }
 }
 
 // 2.4 Գրել ցիկլ որը կոնսոլում տպում է 0-ից 100 միջակայքում ընկած պարզ թվերը:
 
-for(var i=2; i<100; i++){
+for (var i = 2; i < 100; i++) {
     var isPrime = true;
-    for(var j=2; j<i; j++){ // or j<=Math.sqrt(i)
-        if(!(i%j)){
+    for (var j = 2; j < i; j++) { // or j<=Math.sqrt(i)
+        if (!(i % j)) {
             isPrime = false;
             break;
         }
     }
-    if(isPrime){
+    if (isPrime) {
         console.log(i + ' is prime number');
     }
 }
@@ -81,7 +81,7 @@ var prePrevious = 0;
 var previous = 1;
 var step = 8;
 var result = `(${prePrevious}, ${previous}, `;
-for(var i = 0; i<step; i++){ // first two items already exist
+for (var i = 0; i < step; i++) { // first two items already exist
 
     var currentNum = previous + prePrevious;
 

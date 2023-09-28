@@ -28,9 +28,9 @@ if (languageCode === 'en') {
 }
 
 var ternaryResult = languageCode === 'en' ? 'Hello, World' :
-                    languageCode === 'es' ? 'Hola, Mundo' :
-                    languageCode === 'fr' ? 'Bonjour tout le monde' :
-                    'Unknown Language';
+                            languageCode === 'es' ? 'Hola, Mundo' :
+                            languageCode === 'fr' ? 'Bonjour tout le monde' :
+                            'Unknown Language';
 
 console.log('ternaryResult: ' + ternaryResult);
 
