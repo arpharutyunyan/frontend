@@ -18,7 +18,7 @@ console.log(comp(30));
 
 // ------------------ 2 ------------------
 function factorial(num) {
-    if (num === 1) {
+    if (num === 0 || num === 1) {
         return num;
     }
 
@@ -79,6 +79,4 @@ function fibonacci(index) {
     }
 }
 
-let fibonacci_index = 8;
-fibonacci(fibonacci_index);
 console.log(fibonacci_result);
