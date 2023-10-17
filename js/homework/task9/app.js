@@ -1,14 +1,30 @@
 // ------- 1 ---------
-function runningSum(arr){
-    const newArr = [arr[0]];
+// function runningSum(arr){
+//     const newArr = [arr[0]];
+//
+//     for(let i= 1; i < arr.length; i++){
+//         newArr.push(arr[i] + newArr.at(-1));
+//     }
+//     return newArr;
+// }
+//
+// const runningSumResult = runningSum( [1, 2, 3, 4]);
+// console.log(runningSumResult);
 
-    for(let i= 1; i < arr.length; i++){
-        newArr.push(arr[i] + newArr.at(-1));
+function runningSum(arr){
+    const newArr = [];
+
+    for(let i= 1; i <= arr.length; i++){
+        let sum = 0;
+        for(let j = 0; j < i; j++){
+            sum += arr[j];
+        }
+        newArr.push(sum);
     }
     return newArr;
 }
 
-let runningSumResult = runningSum( [1, 2, 3, 4]);
+const runningSumResult = runningSum( [1, 2, 3, 4]);
 console.log(runningSumResult);
 
 // ------- 2 ---------
@@ -51,10 +67,19 @@ const matrix = [
     [23,30,34,60]
 ];
 
-let searchMatrixResult = searchMatrix(matrix, 11);
+let searchMatrixResult = searchMatrix(matrix, 12);
 console.log(searchMatrixResult);
 
 // ------- 4 ---------
-// function removeElement(){
-//
-// }
+function removeElement(arr, element){
+    let index = arr.indexOf(element);
+    if (index !== -1){
+        arr.splice(index, 1);
+    }
+
+    return arr;
+}
+
+const array = [1, 2, 3, 4, 5];
+let removeElementResult = removeElement( array, 3);
+console.log(array, removeElementResult);
