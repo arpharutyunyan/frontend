@@ -175,10 +175,10 @@ const computerMacBook = {
 // const showComputerInfo = (data) => {
 //     const { modelName, year, price } = data;
 //     return `Brand: ${modelName}, Year: ${year}, Price ${price}.`;
-// }
+// };
 
 const showComputerInfo = ({ modelName, year, price }) => {
     return `Brand: ${modelName}, Year: ${year}, Price ${price}.`;
-}
+};
 
 console.log(showComputerInfo(computerMacBook));
