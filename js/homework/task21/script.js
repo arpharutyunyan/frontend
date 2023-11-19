@@ -4,7 +4,7 @@ class Application {
     constructor() {
         this.minNumber = 1;
         this.maxNumber = 6;
-        this.maxScore = 10;
+        this.maxScore = 30;
         this.elements = {};
         this.firstPlayer = new Player(0);
         this.secondPlayer = new Player(1);
@@ -63,7 +63,7 @@ class Application {
         if (diceNumber !== 1) {
             currentPlayer.addCurrentScore(diceNumber);
         } else {
-            currentPlayer.resetScores();
+            currentPlayer.setCurrentScore(0);
             this.firstPlayer.togglePlayerSection();
             this.secondPlayer.togglePlayerSection();
             this.activePlayer = !this.activePlayer; // 0 or 1
