@@ -28,12 +28,11 @@ creditCardsBlock.innerHTML = `
 const personalInformation = document.querySelectorAll('.personal-information input');
 
 personalInformation.forEach(item => {
-    item.addEventListener('focusout', (event) => {
-        validateName(event.target);
-    });
+    item.addEventListener('focusout', validateName);
 });
 
-function validateName(element) {
+function validateName(event) {
+    const element = event.target;
     submitValidation[element.id] = false;
     clearErrorFiled(element);
 
@@ -58,12 +57,11 @@ function validateName(element) {
 
 const emailInput = document.querySelector('#emailInput');
 if (emailInput) {
-    emailInput.addEventListener('focusout', (event) => {
-        validateEmail(event.target);
-    });
+    emailInput.addEventListener('focusout', validateEmail);
 }
 
-function validateEmail(element) {
+function validateEmail(event) {
+    const element = event.target;
     submitValidation[element.id] = false;
     clearErrorFiled(element);
 
@@ -90,9 +88,7 @@ if (postalCodeInput) {
 }
 
 function checkPhoneAndPostCode(element) {
-    element.addEventListener('focusout', (event) => {
-        ValidateNumber(event.target);
-    });
+    element.addEventListener('focusout', validateNumber);
 
     element.addEventListener('keypress', (event) => {
         if (!(event.keyCode >= 48 && event.keyCode <= 57)) {
@@ -101,7 +97,8 @@ function checkPhoneAndPostCode(element) {
     });
 }
 
-function ValidateNumber(element) {
+function validateNumber(event) {
+    const element = event.target;
     submitValidation[element.id] = false;
     clearErrorFiled(element);
 
@@ -128,6 +125,10 @@ if (addBtn) {
             deleteBtn.classList.replace('disabled-btn', 'btn-delete');
             const clonedCardField = cardField.cloneNode(true);
             addBtn.before(clonedCardField);
+            const clonedCardNumberInput = clonedCardField.querySelector('.cardNumberInput');
+
+            clonedCardNumberInput.addEventListener('keypress', changeCardFormat);
+            clonedCardNumberInput.addEventListener('focusout', validateCardNumber);
 
             const clonedDeleteBtn = clonedCardField.querySelector('.btn-delete');
             if (clonedDeleteBtn) {
@@ -158,23 +159,35 @@ function deleteCard(e) {
     }
 }
 
-const cardNumberInputs = document.querySelectorAll('.cardNumberInput');
-if (cardNumberInputs.length) {
-    cardNumberInputs.forEach(item => {
-        item.addEventListener('keypress', (e)=>{
-            if (e.keyCode >= 48 && e.keyCode <= 57 && e.target.value.length < 19) {
-                validateCardNumber(e.target);
-            }else{
-                e.preventDefault();
-            }
-        });
-    });
+function changeCardFormat(e){
+    if (e.keyCode >= 48 && e.keyCode <= 57 && e.target.value.length < 19) {
+        const element = e.target;
+        element.value = element.value.replace(/\W/g, '').replace(/(\d{4})/g, '$1 ');
+    } else {
+        e.preventDefault();
+    }
 }
 
-function validateCardNumber(element){
-    const formattedCardNumber = element.value.replace(/\W/g, '').replace(/(\d{4})/g, '$1 ');
+const cardNumberInput = document.querySelector('.cardNumberInput');
+if (cardNumberInput) {
+    cardNumberInput.addEventListener('keypress', changeCardFormat);
+    cardNumberInput.addEventListener('focusout', validateCardNumber);
+}
 
-    element.value = formattedCardNumber;
+function validateCardNumber(event) {
+    const element = event.target;
+    submitValidation['cardNumberInput'] = false;
+    clearErrorFiled(element);
+
+    const value = element.value.replace(/ /g, '');
+    if (value && value.length < 16) {
+        createErrorFiled(element, 'Should be 16 number!');
+        console.log(submitValidation);
+        return;
+    }
+
+    submitValidation['cardNumberInput'] = true;
+    console.log(submitValidation);
 }
 
 function createErrorFiled(elem, msg) {
@@ -195,13 +208,103 @@ function clearErrorFiled(elem) {
     elem.classList.remove('red-border');
 }
 
-const submitBtn = document.querySelector('.btn-submit');
-if(submitBtn){
-    submitBtn.addEventListener('click', (e)=>{
-        e.preventDefault();
-        const isvalidationPass = Object.values(submitValidation).every(item => item);
-        if(isvalidationPass){
-            submitBtn.closest('form').submit();
-        }
-    })
+function createUserObject(inputs) {
+    const userInfo = {};
+    userInfo['id'] = Date.now(); // use for unique id
+    userInfo['creditCardIds'] = [];
+
+    inputs.forEach(elements => {
+        elements.forEach(element => {
+            userInfo[element.id] = element.value;
+        });
+    });
+
+    return userInfo;
 }
+
+function showUserObject(userInfo) {
+    for(let key in userInfo){
+        const element = document.querySelector(`#${key}`);
+        if(element){
+            element.value = userInfo[key];
+            submitValidation[key] = true; // after reload set value true for second submit
+        }
+    }
+}
+
+function showCardObject(creditCards) {
+    creditCards.forEach((card, key) => {
+        if(key){
+            addBtn.click();
+            const createdElement = creditCardsBlock.querySelectorAll('.form-fields');
+            const currentElement = createdElement[createdElement.length - 1];
+            for(let key in card){
+                const element = currentElement.querySelector(`input[name=${key}]`);
+                if(element){
+                    element.value = card[key];
+                }
+            }
+        }else{ // first card
+            for(let key in card){
+                const element = document.querySelector(`input[name=${key}]`);
+                if(element){
+                    element.value = card[key];
+                }
+            }
+        }
+
+    });
+    submitValidation['cardNumberInput'] = true;
+}
+
+(()=>{
+    const userInfo = localStorage.getItem('user');
+    if(userInfo){
+        showUserObject(JSON.parse(userInfo));
+    }
+
+    const creditCards = localStorage.getItem('creditCards');
+    if(creditCards){
+        showCardObject(JSON.parse(creditCards));
+    }
+})();
+
+function createCardObject(userInfo) {
+    const creditCardsBlock = document.querySelectorAll('.credit-cards .form-fields');
+
+    const creditCardsInfo = [];
+    creditCardsBlock.forEach((elements, key) => {
+        const creditCardInputs = elements.querySelectorAll('input');
+        const creditCard = {};
+        creditCardInputs.forEach(element => {
+            creditCard['id'] = Date.now() + key; // use for unique id
+            creditCard['userId'] = userInfo.id;
+            creditCard[element.name] = element.value;
+        });
+        userInfo['creditCardIds'].push(creditCard['id']);
+        creditCardsInfo.push(creditCard);
+    });
+
+    return creditCardsInfo;
+}
+
+const submitBtn = document.querySelector('.btn-submit');
+if (submitBtn) {
+    submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isValidationPass = Object.values(submitValidation).every(item => item);
+        if (isValidationPass) {
+            const personalInformation = document.querySelectorAll('.personal-information input');
+            const contactDetails = document.querySelectorAll('.contact-details input');
+            const addressDetails = document.querySelectorAll('.address-details input');
+
+            const userInfo = createUserObject([personalInformation, contactDetails, addressDetails]);
+            const creditCardsInfo = createCardObject(userInfo);
+            localStorage.setItem('user', JSON.stringify(userInfo));
+            localStorage.setItem('creditCards', JSON.stringify(creditCardsInfo));
+
+            window.location.reload();
+        }
+    });
+}
+
