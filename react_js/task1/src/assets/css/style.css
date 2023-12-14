@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "Space Mono", sans-serif;
+    background-color: #F5F5DD;
+}
+
+.container {
+    width: 100%;
+    max-width: 1110px;
+    margin: 110px auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.title {
+    width: 100%;
+    background-color: #FFC0CC;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.form__fields {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 1px solid red;
+    margin: 10px 0;
+}
+
+.form__submit_btn {
+    width: 150px;
+    background-color: #AED8E6;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.shooters__list__item {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.list__numbers {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green_border {
+    border: 2px solid green;
+}
+
+.blue_border {
+    border: 2px solid blue;
+}
+
+.shooter__name {
+    font-weight: 700;
+    margin: 10px 0;
+}
