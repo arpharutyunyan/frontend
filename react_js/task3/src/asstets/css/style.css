@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "Space Mono", sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1110px;
+    margin: 110px auto;
+    padding: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divider{
+    width: 70px;
+    height: 5px;
+    background-color: dodgerblue;
+}
+
+.toursList{
+    margin: 30px auto;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.image__block{
+    width: 100%;
+    object-fit: cover;
+}
+
+.image__block img{
+    width: 100%;
+}
+
+.tourInfo{
+    padding: 20px;
+}
+
+.tourInfo__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.tourInfo__title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tourInfo__price{
+    padding: 2px;
+    background-color: #cbe5ff;
+}
+
+.tourInfo__desc__block a{
+    background-color: #cbe5ff;
+}
+.notInterested{
+    display: block;
+    width: 40%;
+    color: red;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 30px auto 5px;
+    text-align: center;
+}
