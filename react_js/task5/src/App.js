@@ -1,5 +1,4 @@
 import React, {useCallback, useState} from 'react';
-import {logDOM} from "@testing-library/react";
 import AddForm from "./components/AddForm";
 import _ from "lodash";
 import TodoList from "./components/TodoList";
