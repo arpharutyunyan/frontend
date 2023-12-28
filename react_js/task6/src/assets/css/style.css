@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.usersList {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.usersList td,
+.usersList th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.usersList thead tr {
+    border-bottom: 2px solid black;
+}
+
+.usersList tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.usersList tbody tr:hover {
+    background-color: #ddd;
+}
+
+.usersList th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
