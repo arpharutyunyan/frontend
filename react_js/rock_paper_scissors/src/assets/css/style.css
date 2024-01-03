@@ -1,0 +1,48 @@
+.app {
+    width: 30%;
+    margin: 50px auto;
+}
+
+.handTypes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.handTypes .handType {
+    cursor: pointer;
+}
+
+.result {
+    border: 1px solid gray;
+    margin: 25px auto;
+    width: 135px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chosenHandType {
+    border: 1px solid gray;
+    padding: 10px 10px 0;
+    position: relative;
+    margin-top: 25px;
+}
+
+.chosenHandType .handTypes{
+    justify-content: start;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.chosenHandType__text{
+    text-align: center;
+}
