@@ -38,6 +38,9 @@ function App() {
         console.log('selectedCountryHandle');
 
         event.preventDefault();
+        if(!selectedCountry){
+            selectedCountry = '';
+        }
         setSelectedCountry(selectedCountry.value);
         getTemperatureData(selectedCountry.value);
     }, [getTemperatureData]);

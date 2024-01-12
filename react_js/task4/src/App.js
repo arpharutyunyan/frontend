@@ -36,7 +36,7 @@ class App extends Component {
 
     handleDelete = (id) => {
         this.setState((prevState) => {
-            const updatedTodos = prevState.todos.filter(element => element.id != id);
+            const updatedTodos = prevState.todos.filter(element => element.id !== id);
 
             return {todos: updatedTodos};
         });
@@ -45,7 +45,7 @@ class App extends Component {
     handleMakeCompleted = (id) => {
         this.setState((prevState) => {
             const updatedTodos = prevState.todos.map((element) => {
-                if (element.id == id) {
+                if (element.id === id) {
                     element.isCompleted = true;
                 }
                 return element;
