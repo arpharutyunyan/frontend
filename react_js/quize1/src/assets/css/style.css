@@ -50,6 +50,11 @@ body {
     width: 40%;
 }
 
+.convertor img{
+    width: 30px;
+    margin-left: 10px;
+}
+
 .button {
     width: 100%;
     display: flex;

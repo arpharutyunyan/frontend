@@ -5,11 +5,14 @@ import Convertor from "./components/Convertor";
 import Button from "./components/Button";
 import Api from "./Api";
 import {ReactComponent as Arrow} from "./assets/images/arrow.svg";
+import CountryCode from "./CountryCode";
 
 function App() {
     const [amount, setAmount] = useState('');
     const [from, setFrom] = useState('');
-    const [to, setTo] = useState('');
+    const [fromFlag, setFromFlag] = useState('');
+    const [to, setTo] = useState(null);
+    const [toFlag, setToFlag] = useState(null);
     const [currencyResult, setCurrencyResult] = useState(0);
 
     const handleAmountValue = useCallback((value) => {
@@ -18,10 +21,14 @@ function App() {
 
     const handleFromChange = useCallback((selectedOption) => {
         setFrom(selectedOption.value);
+        const countryCode = CountryCode.getCountryCode((selectedOption.value).toUpperCase());
+        setFromFlag(countryCode);
     }, []);
 
-    const handleToChange = useCallback((selectedOption) => {
+    const handleToChange = useCallback(async (selectedOption) => {
         setTo(selectedOption.value);
+        const countryCode = CountryCode.getCountryCode((selectedOption.value).toUpperCase());
+        setToFlag(countryCode);
     }, []);
 
     const getResult = useCallback((e) => {
@@ -48,11 +55,17 @@ function App() {
             <div className="convertor">
                 <div className="from">
                     <label>From</label>
+                    {
+                        fromFlag ? <img src={`/images/flags/${fromFlag}.svg`} alt=""/> : null
+                    }
                     <Convertor onHandleChange={handleFromChange}/>
                 </div>
                 <Arrow/>
                 <div className="to">
                     <label>To</label>
+                    {
+                        toFlag ? <img src={`/images/flags/${toFlag}.svg`} alt=""/> : null
+                    }
                     <Convertor onHandleChange={handleToChange}/>
                 </div>
             </div>
