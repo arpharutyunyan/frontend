@@ -1,5 +1,5 @@
 {
-  "name": "practice3",
+  "name": "task15",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
+    "react-select": "^5.8.0",
     "redux": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
