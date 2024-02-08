@@ -1,9 +1,9 @@
 import {createReducer} from "@reduxjs/toolkit";
-import {setBookData, setBookDataFromStorage, setSeatNumber, setShowModal} from "../actions";
+import {setBookData, setSeatNumber, setShowModal} from "../actions";
 
 const initialState = {
     showModal: false,
-    seatData: [],
+    seatData: JSON.parse(localStorage.getItem('selectedSeats')),
     tempSeatNumber: {},
 };
 
@@ -26,10 +26,5 @@ export default createReducer(initialState, builder => {
             }
 
             localStorage.setItem('selectedSeats', JSON.stringify(state.seatData));
-        })
-        .addCase(setBookDataFromStorage, (state, action) => {
-            if (selectedSeats) {
-                state.seatData = selectedSeats;
-            }
         })
 })

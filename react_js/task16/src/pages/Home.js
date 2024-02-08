@@ -1,9 +1,10 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback} from 'react';
 import _ from 'lodash';
 import {createPortal} from "react-dom";
 import Modal from "../components/Modal";
 import {useDispatch, useSelector} from "react-redux";
-import {setBookDataFromStorage, setSeatNumber, setShowModal} from "../store/actions";
+import {setSeatNumber, setShowModal} from "../store/actions";
+import {CSSTransition} from "react-transition-group";
 
 const numRows = 10;
 const numCols = 20;
@@ -13,10 +14,6 @@ function Home(props) {
     const showModal = useSelector(state => state.showModal);
 
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(setBookDataFromStorage());
-    }, []);
 
     const handleSeatNumber = useCallback((row, col) => {
         const tempSeatNumber = {
@@ -54,14 +51,15 @@ function Home(props) {
                 </tbody>
             </table>
 
-            {
-                showModal ?
-                    createPortal(
-                        <Modal/>,
-                        document.body
-                    )
-                    : null
-            }
+            <CSSTransition
+                in={showModal}
+                timeout={1000}
+                classNames="modal_animation"
+                unmountOnExit
+            >
+                {() => createPortal(<Modal/>, document.body)}
+            </CSSTransition>
+
         </div>
     );
 }

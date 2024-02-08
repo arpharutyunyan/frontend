@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow: hidden;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -16,13 +20,17 @@ td, th {
     padding: 8px;
 }
 
+.booking {
+    background-color: red;
+}
+
 .modal {
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.56);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,11 +43,43 @@ td, th {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    background-color: rgba(227, 222, 222, 0.83);
-    border: 1px solid black;
+    padding: 15px;
     width: 300px;
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e5e5e5;
+    border-radius: 10px;
 }
 
-.booking {
-    background-color: red;
+.modal_animation-enter-active {
+    animation: moveUp 1s ease-out forwards;
+}
+
+.modal_animation-exit-active {
+    animation: moveDown 1s ease-out forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translate(0, -50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 50%);
+        opacity: 0;
+    }
 }
