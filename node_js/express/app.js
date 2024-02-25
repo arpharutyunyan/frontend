@@ -119,21 +119,29 @@ app.put('/users/update', (req, res) => {
         return;
     }
 
-    let userData = JSON.parse(fs.readFileSync(userFile, 'utf8'));
+    try{
+        let userData = JSON.parse(fs.readFileSync(userFile, 'utf8'));
 
-    userData.firstName = firstName;
-    userData.lastName = lastName;
+        userData.firstName = firstName;
+        userData.lastName = lastName;
 
-    fs.writeFileSync(userFile, JSON.stringify(userData))
+        fs.writeFileSync(userFile, JSON.stringify(userData))
 
-    // const updatedData = fs.readFileSync(userFile, 'utf8');
-    // delete updatedData.password;
-    //
-    // res.send(updatedData)
+        // const updatedData = fs.readFileSync(userFile, 'utf8');
+        // delete updatedData.password;
+        //
+        // res.send(updatedData)
 
-    res.json({
-        userData
-    })
+        res.json({
+            userData
+        })
+    }catch (e){
+        res.status(404);
+        res.json({
+            userData: [],
+            "message": e.message
+        })
+    }
 })
 
 app.delete('/users/delete', (req, res) => {
