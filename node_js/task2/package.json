@@ -1,0 +1,18 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js",
+    "prod": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
