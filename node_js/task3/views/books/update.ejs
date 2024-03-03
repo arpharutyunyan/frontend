@@ -1,0 +1,28 @@
+<%- include('../_header', {title: "Books edit"}) -%>
+
+<h3>Book update</h3>
+<div>
+    <form action="/books/update/<%= data.id %>?_method=PUT" method="POST">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="<%= data.title %>">
+            <span class="error"><%= errors.title %></span>
+        </div>
+
+        <div>
+            <label for="auth">Author</label>
+            <input type="text" id="auth" name="auth" value="<%= data.auth %>">
+            <span class="error"><%= errors.auth %></span>
+        </div>
+
+        <div>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="published_date" value="<%= data.published_date %>">
+            <span class="error"><%= errors.published_date %></span>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<%- include('../_footer') -%>

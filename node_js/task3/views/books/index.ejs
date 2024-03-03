@@ -1,0 +1,55 @@
+<%- include('../_header', {title: "Books List"}) -%>
+<h1>Books List</h1>
+<% if(locals.deleted) { %>
+    <div id="message">
+        <strong>Successfully deleted</strong>
+        <button>x</button>
+    </div>
+<% } %>
+
+<div>
+    <a href="/books/create" style="color: red">
+        Create Book
+    </a>
+</div>
+
+
+<table id="books">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Date</th>
+        <th>Action</th>
+    </tr>
+
+    <% books.forEach(book => { %>
+        <tr>
+            <td><%= book.id %></td>
+            <td><%= book.title %></td>
+            <td><%= book.auth %></td>
+            <td><%= book.published_date %></td>
+            <td class="action_icons">
+                <form method="GET" action="/books/update/<%= book.id %>">
+                    <button type="submit">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                </form>
+                <form method="POST" action="/books/delete/<%= book.id %>?_method=DELETE">
+                    <button type="submit">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    <% }) %>
+</table>
+<ul class="pagination">
+    <% _.range(1, totalPages + 1).map((page) => { %>
+        <li class="<%= currentPage === page ? 'active' : '' %>">
+            <a href="?page=<%= page %>"><%= page %></a>
+        </li>
+    <% }) %>
+</ul>
+
+<%- include('../_footer') -%>

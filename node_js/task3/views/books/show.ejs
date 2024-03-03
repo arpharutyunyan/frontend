@@ -1,0 +1,19 @@
+<%- include('../_header', {title: "Book view"}) -%>
+
+<h3>Book view</h3>
+
+<div>
+    <p><%= book.id %></p>
+    <p><%= book.title %></p>
+    <p><%= book.auth %></p>
+    <p><%= book.published_date %></p>
+
+    <div>
+        <a href="/books" style="color: red">
+            Back
+        </a>
+    </div>
+
+</div>
+
+<%- include('../_footer') -%>
