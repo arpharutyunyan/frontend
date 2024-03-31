@@ -1,0 +1,29 @@
+{
+  "name": "elections-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon -r dotenv/config ./app.js",
+    "migrate": "node -r dotenv/config ./migrate.js",
+    "prod": "node -r dotenv/config ./app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "http-errors": "^2.0.0",
+    "joi": "^17.12.2",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.9.2",
+    "sequelize": "^6.37.1",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

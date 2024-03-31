@@ -119,11 +119,7 @@ class PeopleController {
                 throw HttpErrors(404);
             }
 
-            await person.destroy({
-                where: {
-                    id: id,
-                }
-            })
+            await person.destroy()
 
             res.json({
                 message: 'success'

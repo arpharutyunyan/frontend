@@ -104,11 +104,7 @@ class CandidatesController {
                 throw HttpErrors(404);
             }
 
-            await candidate.destroy({
-                where: {
-                    id: id,
-                }
-            })
+            await candidate.destroy()
 
             res.json({
                 message: 'success'
