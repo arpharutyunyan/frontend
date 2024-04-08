@@ -4,6 +4,7 @@ import Users from "./Users.js";
 
 class Messages extends Model {
 
+
 }
 
 Messages.init({
@@ -33,6 +34,11 @@ Messages.init({
     type: DataTypes.ENUM('text', 'voice', 'video'),
     allowNull: true,
   },
+  isLast: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false
+  },
 }, {
   sequelize,
   modelName: 'messages',
@@ -46,11 +52,25 @@ Messages.belongsTo(Users, {
   as: 'userFrom'
 })
 
+Users.hasMany(Messages, {
+  foreignKey: 'from',
+  onDelete: 'cascade',
+  onUpdate: 'cascade',
+  as: 'messagesFrom'
+})
+
 Messages.belongsTo(Users, {
   foreignKey: 'to',
   onDelete: 'cascade',
   onUpdate: 'cascade',
   as: 'userTo'
+})
+
+Users.hasMany(Messages, {
+  foreignKey: 'to',
+  onDelete: 'cascade',
+  onUpdate: 'cascade',
+  as: 'messagesTo'
 })
 
 export default Messages

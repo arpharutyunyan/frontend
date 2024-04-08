@@ -7,6 +7,19 @@ const { PASSWORD_SECRET } = process.env
 class Users extends Model {
 
   static passwordHash = (pass) => md5(md5(pass) + PASSWORD_SECRET)
+
+  static async updateUserStatus (id, status) {
+    try{
+      await this.update(
+          {status: status},
+          {
+            where: {id}
+          });
+    }catch (e){
+      console.log(e)
+    }
+
+  }
 }
 
 Users.init({
@@ -44,6 +57,19 @@ Users.init({
     type: DataTypes.STRING,
     allowNull: false,
     defaultValue: '',
+    get() {
+      const avatar = this.getDataValue('avatar');
+      if (!avatar) {
+        const email = this.getDataValue('email')?.toLowerCase();
+        return `https://gravatar.com/avatar/${md5(email)}?d=monsterid`
+      }
+    }
+  },
+  status: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: 0,
+    after: 'avatar',
   }
 }, {
   sequelize,

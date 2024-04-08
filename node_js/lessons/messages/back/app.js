@@ -6,13 +6,15 @@ import routes from "./routes/index.js";
 
 const app = express();
 
-app.use(cors)
+app.use(cors);
 app.use(express.urlencoded({
   limit: 1024 * 1024 * 10,
 }));
 app.use(express.json({
   limit: 1024 * 1024 * 10
 }));
+
+app.use(express.static("public"));
 
 app.use(routes);
 

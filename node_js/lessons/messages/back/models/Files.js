@@ -3,6 +3,8 @@ import sequelize from "../services/sequelize.js";
 import Messages from "./Messages.js";
 import Users from "./Users.js";
 
+const { API_URL } = process.env;
+
 class Files extends Model {
 
 }
@@ -17,6 +19,12 @@ Files.init({
   path: {
     type: DataTypes.STRING,
     allowNull: false,
+    get() {
+      const value = this.getDataValue('path');
+      if (value) {
+        return API_URL + '/' + value
+      }
+    }
   },
   messageId: {
     type: DataTypes.BIGINT.UNSIGNED,
@@ -26,7 +34,7 @@ Files.init({
     type: DataTypes.BIGINT.UNSIGNED,
     allowNull: false,
   },
-  memeType: {
+  type: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -35,6 +43,10 @@ Files.init({
     allowNull: false,
     defaultValue: 0,
   },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
 }, {
   sequelize,
   modelName: 'files',

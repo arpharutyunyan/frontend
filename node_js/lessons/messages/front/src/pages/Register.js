@@ -5,6 +5,7 @@ import { registerRequest } from "../store/actions/users";
 import { useDispatch } from "react-redux";
 import Input from "../components/form/Input";
 import { toast } from "react-toastify";
+import WrapperLogOut from "../components/WrapperLogOut";
 
 function Messages(props) {
   const dispatch = useDispatch();
@@ -34,61 +35,63 @@ function Messages(props) {
     }
   }, [formData]);
   return (
-    <div className="login-wrapper">
-      <section className="signup">
-        <div className="container">
-          <div className="signup-content">
-            <div className="signup-form">
-              <h2 className="form-title">Sign up</h2>
-              <form onSubmit={handleSubmit} className="register-form" id="register-form">
-                <Input
-                  value={formData.firstName}
-                  onChange={onChange('firstName')}
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="First Name"
-                  error={errors.firstName}
-                />
-                <Input
-                  value={formData.lastName}
-                  onChange={onChange('lastName')}
-                  type="text" name="name" id="name"
-                  placeholder="Last Name"
-                  error={errors.lastName}
-                />
-                <Input value={formData.email}
-                       onChange={onChange('email')}
-                       type="email" name="email" id="email" placeholder="Your Email"
-                       error={errors.email}
-                />
-                <Input value={formData.password}
-                       onChange={onChange('password')}
-                       type="password" name="pass" id="pass" placeholder="Password"
-                       error={errors.password}
-                />
-                <div className="form-group">
-                  <label className="label-agree-term">
-                    <input type="checkbox" name="agree-term"/>
-                    {' I agree allstatements in '}
-                    <a href="https://colorlib.com/etc/regform/colorlib-regform-7/#" className="term-service">Terms of
-                      service</a>
-                  </label>
-                </div>
-                <div className="form-group form-button">
-                  <input type="submit" name="signup" id="signup" className="form-submit" value="Register"/>
-                </div>
-              </form>
-            </div>
-            <div className="signup-image">
-              <figure><img src={image} alt="sing up image"/></figure>
-              <Link to="/login" className="signup-image-link">I am
-                already member</Link>
+    <WrapperLogOut>
+      <div className="login-wrapper">
+        <section className="signup">
+          <div className="container">
+            <div className="signup-content">
+              <div className="signup-form">
+                <h2 className="form-title">Sign up</h2>
+                <form onSubmit={handleSubmit} className="register-form" id="register-form">
+                  <Input
+                    value={formData.firstName}
+                    onChange={onChange('firstName')}
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="First Name"
+                    error={errors.firstName}
+                  />
+                  <Input
+                    value={formData.lastName}
+                    onChange={onChange('lastName')}
+                    type="text" name="name" id="name"
+                    placeholder="Last Name"
+                    error={errors.lastName}
+                  />
+                  <Input value={formData.email}
+                         onChange={onChange('email')}
+                         type="email" name="email" id="email" placeholder="Your Email"
+                         error={errors.email}
+                  />
+                  <Input value={formData.password}
+                         onChange={onChange('password')}
+                         type="password" name="pass" id="pass" placeholder="Password"
+                         error={errors.password}
+                  />
+                  <div className="form-group">
+                    <label className="label-agree-term">
+                      <input type="checkbox" name="agree-term"/>
+                      {' I agree allstatements in '}
+                      <a href="https://colorlib.com/etc/regform/colorlib-regform-7/#" className="term-service">Terms of
+                        service</a>
+                    </label>
+                  </div>
+                  <div className="form-group form-button">
+                    <input type="submit" name="signup" id="signup" className="form-submit" value="Register"/>
+                  </div>
+                </form>
+              </div>
+              <div className="signup-image">
+                <figure><img src={image} alt="sing up" /></figure>
+                <Link to="/login" className="signup-image-link">I am
+                  already member</Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </WrapperLogOut>
   );
 }
 

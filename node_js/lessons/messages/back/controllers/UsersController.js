@@ -1,5 +1,11 @@
-import { Users } from "../models/index.js";
+import { Messages, Users } from "../models/index.js";
 import HttpErrors from "http-errors";
+import jwt from "jsonwebtoken";
+import sequelize from "../services/sequelize.js";
+import { Op, QueryTypes } from "sequelize";
+import Sequelize from "../services/sequelize.js";
+
+const { JWT_SECRET } = process.env;
 
 class UsersController {
   static async register(req, res, next) {
@@ -29,23 +35,35 @@ class UsersController {
 
   static async login(req, res, next) {
     try {
-      const { firstName, lastName, password, email } = req.body;
-      const exists = await Users.findOne({
-        where: { email }
+      const { email, password } = req.body;
+      const hashedPassword = Users.passwordHash(password);
+
+      const user = await Users.findOne({
+        where: { email, password: hashedPassword },
+        logging: true
       });
-      if (exists) {
-        throw HttpErrors(422, {
+      // user.dataValues.password
+      // || hashedPassword !== user.getDataValue('password')
+      if (!user) {
+        throw HttpErrors(403, {
           errors: {
-            email: "Already exists"
+            email: "Invalid email or password"
           }
         })
       }
-      const user = await Users.create({
-        firstName, lastName, password, email
-      })
+
+      const token = jwt.sign({
+        userId: user.id,
+      }, JWT_SECRET,);
+
+      res.cookie('token', token, {
+        httpOnly: true
+      });
+
       res.json({
         status: 'ok',
-        user
+        user,
+        token
       })
     } catch (e) {
       next(e)
@@ -56,6 +74,20 @@ class UsersController {
     try {
       const { userId } = req;
 
+      const user = await Users.findOne({
+        where: {
+          id: userId
+        }
+      })
+
+      if (!user) {
+        throw HttpErrors(404, "User not found");
+      }
+
+      res.json({
+        status: 'ok',
+        user,
+      })
     } catch (e) {
       next(e)
     }
@@ -65,6 +97,20 @@ class UsersController {
     try {
       const { userId } = req.params;
 
+      const user = await Users.findOne({
+        where: {
+          id: userId
+        }
+      })
+
+      if (!user) {
+        throw HttpErrors(404, "User not found");
+      }
+
+      res.json({
+        status: 'ok',
+        user,
+      })
     } catch (e) {
       next(e)
     }
@@ -73,7 +119,42 @@ class UsersController {
   static async list(req, res, next) {
     try {
       const { userId } = req;
+      const { search } = req.query;
 
+      const where = {};
+      if (search) {
+        where[Op.or] = [
+          { firstName: { [Op.substring]: search } },
+          { lastName: { [Op.substring]: search } },
+          { email: { [Op.substring]: search } },
+        ]
+      }
+
+      const users = await Users.findAll({
+        where,
+        include: [{
+          model: Messages,
+          as: 'messagesFrom',
+          attributes: [],
+          required: false,
+          // where: { isLast: true }
+        }, {
+          model: Messages,
+          as: 'messagesTo',
+          attributes: [],
+          required: false,
+          // where: { isLast: true }
+        }],
+        logging: true,
+        order: [
+          [Sequelize.literal('if(`messagesFrom`.createdAt is null, `messagesTo`.createdAt, `messagesFrom`.createdAt)'), 'desc']
+        ]
+      });
+
+      res.json({
+        status: 'ok',
+        users,
+      })
     } catch (e) {
       next(e)
     }

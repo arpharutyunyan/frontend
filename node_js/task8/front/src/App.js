@@ -10,11 +10,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={'/'} element={<Messages/>}/>
+          <Route path={'/users/:friendId'} element={<Messages/>}/>
           <Route path={'/login'} element={<Login/>}/>
           <Route path={'/register'} element={<Register/>}/>
         </Routes>
       </BrowserRouter>
-      <ToastContainer hideProgressBar />
+      <ToastContainer hideProgressBar/>
     </>
   );
 }
