@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="file" id="test">
+<script>
+  document.getElementById('test').addEventListener('change', (ev) => {
+    console.log(ev.target.files[0]);
+  })
+</script>
+</body>
+</html>

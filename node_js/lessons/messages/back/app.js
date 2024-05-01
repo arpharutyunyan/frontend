@@ -38,7 +38,7 @@ app.use((err, req, res, next) => {
   })
 })
 
-const server = app.listen(4000, 'localhost', () => {
+const server = app.listen(4000, '192.168.100.21', () => {
   console.log('server work');
 })
 
